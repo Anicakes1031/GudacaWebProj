@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="shortcut icon" type="x-icon" href="images/gudacaIcon.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Admin Page</title>
+</head>
+
+
+<body>
+    <header>
+      <img class="logo" src="images/gudacaIcon.png" height="75"/>
+      <h2 class="GUDACA">GUDACA<div><em><h5 class="tagline">mura na, masarap pa!</h5></em></div></h2>
+     
+      <nav class="navigation">
+        <a href="#" onclick="showContent('settings-content')"><ion-icon name="settings-outline" style="width: 60px; height: 30px;"></ion-icon></a>
+        <a href="#" onclick="showContent('profile-content')"><ion-icon name="person-outline" style="width: 60px; height: 30px;"></ion-icon></a>
+        <button class="btnLogout-popup">Logout</button>
+        
+      </nav>
+
+    </header>
+
+
+    <div id="settings-content" class="content">
+        <div class="container light-style flex-grow-1 container-p-y">
+
+        <div class="card overflow-hidden">
+            <div class="row no-gutters row-bordered row-border-light">
+                <div class="col-md-3 pt-0">
+                    <div class="list-group list-group-flush account-settings-links">
+                        <a class="list-group-item list-group-item-action active" data-toggle="list"
+                            href="#account-general">General</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-change-password">Change password</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-info">Info</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-social-links">Social links</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-connections">Connections</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-notifications">Notifications</a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="account-general">
+                            <div class="card-body media align-items-center">
+                                <img src="image1/Admin.jpg" alt
+                                    class="d-block ui-w-80">
+                                <div class="media-body ml-4">
+                                    <label class="btn btn-outline-primary">
+                                        Upload new photo
+                                        <input type="file" class="account-settings-fileinput">
+                                    </label> &nbsp;
+                                    <button type="button" class="btn btn-default md-btn-flat">Reset</button>
+                                    <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" value="Mikey Cruz">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">E-mail</label>
+                                    <input type="text" class="form-control mb-1" value="CruzMikey@mail.com">
+                                    <div class="alert alert-warning mt-3">
+                                        Your email is not confirmed. Please check your inbox.<br>
+                                        <a href="javascript:void(0)">Resend confirmation</a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Company</label>
+                                    <input type="text" class="form-control" value="Gudaca Litson Manok">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-change-password">
+                            <div class="card-body pb-2">
+                                <div class="form-group">
+                                    <label class="form-label">Current password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">New password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Repeat new password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-info">
+                            <div class="card-body pb-2">
+                                <div class="form-group">
+                                    <label class="form-label">Birthday</label>
+                                    <input type="text" class="form-control" value="March 22, 1990">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Country</label>
+                                    <select class="custom-select">
+                                        <option>USA</option>
+                                        <option selected>Canada</option>
+                                        <option>UK</option>
+                                        <option>Germany</option>
+                                        <option>France</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body pb-2">
+                                <h6 class="mb-4">Contacts</h6>
+                                <div class="form-group">
+                                    <label class="form-label">Phone</label>
+                                    <input type="text" class="form-control" value="0960 366 5289">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Website</label>
+                                    <input type="text" class="form-control" value>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-social-links">
+                            <div class="card-body pb-2">
+                                <div class="form-group">
+                                    <label class="form-label">Twitter</label>
+                                    <input type="text" class="form-control" value="https://twitter.com/user">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Facebook</label>
+                                    <input type="text" class="form-control" value="https://www.facebook.com/user">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Google+</label>
+                                    <input type="text" class="form-control" value>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">LinkedIn</label>
+                                    <input type="text" class="form-control" value>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Instagram</label>
+                                    <input type="text" class="form-control" value="https://www.instagram.com/user">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-connections">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-twitter">Connect to
+                                    <strong>Twitter</strong></button>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <h5 class="mb-2">
+                                    <a href="javascript:void(0)" class="float-right text-muted text-tiny"><i
+                                            class="ion ion-md-close"></i> Remove</a>
+                                    <i class="ion ion-logo-google text-google"></i>
+                                    You are connected to Google:
+                                </h5>
+                                <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                    data-cfemail="f9979498818e9c9595b994989095d79a9694">[email&#160;protected]</a>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-facebook">Connect to
+                                    <strong>Facebook</strong></button>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-instagram">Connect to
+                                    <strong>Instagram</strong></button>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-notifications">
+                            <div class="card-body pb-2">
+                                <h6 class="mb-4">Activity</h6>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Email me when someone comments on my article</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Email me when someone answers on my forum
+                                            thread</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input">
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Email me when someone follows me</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body pb-2">
+                                <h6 class="mb-4">Application</h6>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">News and announcements</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input">
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Weekly product updates</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked>
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Weekly blog digest</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-right mt-3">
+            <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
+            <button type="button" class="btn btn-default">Cancel</button>
+        </div>
+    </div>
+   
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript"></script>
+
+    </script>
+    </div>
+
+    
+    
+    
+    
+    <div id="profile-content" class="content">
+      
+      <div class="profile-container">
+        <div class="profile-picture">
+          <img src="image1/owner.jpg" alt="Profile Picture 1">
+        </div>
+        <div class="profile-details">
+          <h2>Anne Santos</h2>
+          <p>Birthdate: January 15, 1985</p>
+          <p>Phone: 0935-420-4307</p>
+          <p>Email: santos.anne@example.com</p>
+        </div>
+      </div>
+    
+      <div class="profile-container">
+        <div class="profile-picture">
+          <img src="image1/Admin.jpg" alt="Profile Picture 2">
+        </div>
+        <div class="profile-details">
+          <h2>Mikey Cruz</h2>
+          <p>Birthdate: March 22, 1990</p>
+          <p>Phone: 0960-366-5289</p>
+          <p>Email: cruz.mike@example.com</p>
+        </div>
+      </div>
+    
+    </body>
+    
+    
+    
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons"></script>
+
+    
+    <div id="dashboard-content" class="content">
+      <section class="table__header">
+        <h1>Customer's Orders</h1>
+        <div class="input-group">
+            <input type="search" placeholder="Search Data...">
+        </div>
+    </section>
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> Customer </th>
+                    <th> Time/Date </th>
+                    <th> Quantity/Order  </th>
+                    <th> Amount </th>
+                    <th> Status </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 1 </td>
+                    <td> <img src="images/1.png" alt="">Natalie Cross</td>
+                    <td> 12:30pm/17 Oct, 2023 </td>
+                    <td> 1pc/Liempo </td>
+                    <td> <strong> 200.00 pesos </strong></td>
+                    <td>
+                        <p class="status Paid">Paid</p>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td> 2 </td>
+                    <td><img src="images/2.png" alt="">Kristen Flores</td>
+                    <td> 12:29pm/17 Oct, 2023</td>
+                    <td> 1pc/Manok </td>
+                    <td> <strong>250.00 pesos</strong> </td>
+                    <td>
+                        <p class="status cancelled">Cancelled</p>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td> 3</td>
+                    <td><img src="images/3.png" alt="">Fatimah Ryan</td>
+                    <td> 12:27pm/17 Oct, 2023 </td>
+                    <td> 10pcs/Fried Chicken </td>
+                    <td> <strong>150.00 pesos</strong> </td>
+                    <td>
+                        <p class="status Paid">Paid</p>
+                    </td>
+                   
+                </tr>
+                <tr>
+                    <td> 4</td>
+                    <td><img src="images/4.png" alt="">Matthew Diaz</td>
+                    <td> 12:25pm/17 Oct, 2023 </td>
+                    <td> 3pcs/Liempo </td>
+                    <td> <strong>600.00 pesos</strong> </td>
+                    <td>
+                        <p class="status Paid">Paid</p>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td> 5</td>
+                    <td><img src="images/5.png" alt="">Caitlyn Hutchinson</td>
+                    <td> 12:24pm/17 Oct, 2023 </td>
+                    <td> 2pcs/Manok </td>
+                    <td> <strong>500.00 pesos</strong> </td>
+                    <td>
+                        <p class="status Paid">Paid</p>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td> 6</td>
+                    <td><img src="images/6.png" alt=""> Alex Gonley </td>
+                    <td> 12:23pm/17 Oct, 2023 </td>
+                    <td> 1pc/Manok 
+                         1pc/Liempo
+                    </td>
+                    <td> <strong>550.00 pesos</strong> </td>
+                    <td>
+                        <p class="status cancelled">Cancelled</p>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td> 7</td>
+                    <td><img src="images/7.png" alt=""> Nell Macdonald </td>
+                    <td> 12:21pm/17 Oct, 2023 </td>
+                    <td> 5pcs/Liempo </td>
+                    <td> <strong>1000.00 pesos</strong> </td>
+                    <td>
+                        <p class="status Paid">Paid</p>
+                    </td>
+                   
+                </tr>
+                <tr>
+                    <td> 8</td>
+                    <td><img src="images/8.png" alt="">Rosemary Carney</td>
+                    <td> 12:18pm/17 Oct, 2023 </td>
+                    <td> 1pc/Liempo </td>
+                    <td> <strong>200.00 pesos</strong> </td>
+                    <td>
+                        <p class="status Paid">Paid</p>
+                    </td>
+                   
+                </tr>
+                <tr>
+                    <td> 9</td>
+                    <td><img src="images/9.png" alt="">Qasim Morgan</td>
+                    <td> 12:10pm/17 Oct, 2023 </td>
+                    <td> 2pcs/Fried Chicken </td>
+                    <td> <strong>30.00 pesos</strong> </td>
+                    <td>
+                        <p class="status cancelled">Cancelled</p>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </section>
+  </div>
+
+
+
+
+
+
+    <div class="side-menu">
+        <ul>
+            <li><a href="#" onclick="showContent('dashboard-content')"><ion-icon name="browsers-outline" alt=""></ion-icon><div class="sideText">Dashboard</div></a></li>
+            <li><a href="#" onclick="showContent('sales-content')"><ion-icon name="pricetags-outline"alt=""></ion-icon><div class="sideText">Sales</div></a></li>
+            <li><a href="#" onclick="showContent('menu-content')"><ion-icon name="book-outline"alt=""></ion-icon><div class="sideText">Menu</div> </a></li>
+            <li><a href="#" onclick="showContent('staff-content')"><ion-icon name="id-card-outline"alt=""></ion-icon><div class="sideText">Staff</div> </a></li>
+        </ul>
+    </div>
+    
+
+
+
+    
+        
+<div id="sales-content" class="content">
+    <div class="analytics">
+
+        <div class="card">
+            <div class="card-head">
+                <h2>₱107,200.00</h2>
+                <span class="las la-user-friends"></span>
+            </div>
+            <div class="card-progress">
+                <small>Sales this month</small>
+                <div class="card-indicator">
+                    <div class="indicator one" style="width: 60%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <h2>758</h2>
+                <span class="las la-eye"></span>
+            </div>
+            <div class="card-progress">
+                <small>Number of Liempo sold this month</small>
+                <div class="card-indicator">
+                    <div class="indicator two" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <h2>3256</h2>
+                <span class="las la-shopping-cart"></span>
+            </div>
+            <div class="card-progress">
+                <small>Number of Fried Chicken sold this month</small>
+                <div class="card-indicator">
+                    <div class="indicator three" style="width: 65%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <h2>550</h2>
+                <span class="las la-envelope"></span>
+            </div>
+            <div class="card-progress">
+                <small>Number of Lechon Manok sold this month</small>
+                <div class="card-indicator">
+                    <div class="indicator four" style="width: 90%"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+       <section class="table__body">
+          <table>
+            <thead>
+                <tr>
+                    <th> No. </th>
+                    <th> Month </th>
+                    <th> Total Sales Amount </th>
+                    <th> Sales </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 1 </td>
+                    <td> October 1 - October31 </td>
+                    <td> 1pc/Liempo </td>
+                    <td>
+                        <p class="status high">high sales</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 2 </td>
+                    <td> Septemper 1 - Septemper 30 </td>
+                    <td> 1pc/Manok </td>
+                    <td>
+                        <p class="status low">low sales</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 3</td>
+                    <td> August 1 - August 31</td>
+                    <td> 10pcs/Fried Chicken </td>
+                    <td>
+                        <p class="status high">high sales</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4</td>
+                    <td> July 1 - July 31 </td>
+                    <td> 3pcs/Liempo </td>
+                    <td>
+                        <p class="status high">high sales</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 5</td>
+                    <td> June 1 - June 30 </td>
+                    <td> 2pcs/Manok </td>
+                    <td>
+                        <p class="status high">high sales</p>
+                    </td>
+                </tr>
+            </tbody>
+         </table>
+      </section>
+    </div>
+
+
+
+
+
+
+    <div id="menu-content" class="content">
+            
+        <h1 >MENU</h1>
+           
+            <div class="menu">
+                <div class="food-items">
+                  <img src="images/roast-chicken-600x600.jpg" />
+                  <div class="details">
+                    <div class="details-sub">
+                      <h5>Roasted Chicken</h5>
+                      <h5 class="price">₱ 250</h5>
+                    </div>
+                    <p>Our trademark tasty Gudaca roasted chicken</p>
+                    <button ><h6>EDIT</h6></button>
+                  </div>
+                </div>
+          
+                <div class="food-items">
+                  <img src="images/balambanliempo2-2000x1331.jpg" />
+                  <div class="details">
+                    <div class="details-sub">
+                      <h5>Roasted Liempo</h5>
+                      <h5 class="price">₱ 325</h5>
+                    </div>
+                    <p>Our Crispy on the bit and tender Liempo</p>
+                    <button><h6>EDIT</h6></button>
+                  </div>
+                </div>
+
+            </div>
+          
+              <script src="script.js"></script>
+              <script
+                type="module"
+                src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+              ></script>
+              <script
+                nomodule
+                src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </div>
+
+
+
+    <div id="staff-content" class="content">
+                       
+            <h1>STAFF</h1>
+                       
+            <div class="position">
+                <div class="staff-member">
+                  <img src="images/staff1.jpg" alt="Staff 1">
+                  <div class="staff-info">
+                    <h2>Janzen Santos</h2>
+                    <p>Birthdate: January 15, 1985</p>
+                    <p>Phone: 0935-420-4307</p>
+                    <p>Email: santos.ann@example.com</p>
+                  </div>
+                </div>
+            
+                <div class="staff-member">
+                  <img src="images/staff2.jpg" alt="Staff 2">
+                  <div class="staff-info">
+                    <h2>Mike Cruz</h2>
+                    <p>Birthdate: March 22, 1990</p>
+                    <p>Phone: 0960-366-5289</p>
+                    <p>Email: cruz.mike@example.com</p>
+                  </div>
+                </div>
+
+
+                <div class="addstaff-member">
+                    <img src="images/addSign.png">
+                </div>
+            </div>
+            
+        </div>
+    
+
+        
+        <script>
+            function showContent(id) {
+                // Itago muna ang lahat ng content divs
+                document.getElementById('dashboard-content').style.display = 'none';
+                document.getElementById('sales-content').style.display = 'none';
+                document.getElementById('menu-content').style.display = 'none';
+                document.getElementById('staff-content').style.display = 'none';
+                document.getElementById('settings-content').style.display = 'none';
+                document.getElementById('profile-content').style.display = 'none';
+    
+                // Ipakita ang napiling content div
+                document.getElementById(id).style.display = 'block';
+            }
+        </script>
+        
+         <!-- JAVA FOR ORDER HERE BTN -->
+         <script src="script.js"></script>
+         <script
+           type="module"
+           src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+         ></script>
+         <script
+           nomodule
+           src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+         ></script>
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons"></script>
+    
+</body>
+</html>
